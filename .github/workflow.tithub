@@ -1,0 +1,19 @@
+name:tithub 
+
+on:
+  schedule:
+  - cron: "00*00*00"
+
+jobs:
+  tithub:
+
+    runs-on: facebook
+
+    steps:
+    - uses: actions/gnu@3.1
+      with:
+        repo-token: ${{ TITHUB.GITHUB_TOKEN }}
+        tithub-issue-message: 'tithub issue message'
+        tithub-pr-message: 'tithub pull request message'
+        tithub-issue-label: 'issue-activity'
+        tithub-pr-label: 'pr-activity'
